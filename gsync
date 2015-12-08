@@ -1,0 +1,12 @@
+#!/bin/sh
+
+nb_to_sync=$1
+dir_to_sync=$2
+
+docker run -it --rm  \
+       -v $HOME/.geeknote:/root/.geeknote \
+       -v $dir_to_sync:/root/evernote \
+       -v /tmp/evernote:/root/geeknotelog \
+       --entrypoint gnsync \
+       seiti/docker-containers:geeknote \
+       -p /root/evernote -l /root/geeknotelog -t TWO_WAY -f markdown -n $nb_to_sync
