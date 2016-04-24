@@ -25,7 +25,6 @@ def strip_1(members):
 	if n.endswith(".md") or n in ("Makefile", "test"):
             continue
         x.name = apply(join, sp[1:])
-	print x.name
         yield x
 
 tar.extractall(members=strip_1(tar), path=DIR)
