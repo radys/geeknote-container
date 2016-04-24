@@ -9,7 +9,7 @@ for this. The original idea has been copied from [seiti/geeknote-container](http
 This container differs from the orginal in the following ways:
 - vim has been added to make `geeknote edit` work.
 - the vim "plasticbox" plugin has been added (markdown mode).
-- the container is based on debian:testing rather than python:2. As far as they are available, original debian python packages are used. Only those packages that I didn't found on debian are installed using pip. Therefore we don't have the latest + greatest Python code, but we have a clean Debian installation to the maximum possible extent, and the resulting image is much smaller.
+- the container is based on debian:testing rather than python:2. As far as they are available, original debian python packages are used. Only those packages that I didn't find on debian are installed using pip. Therefore we don't have the latest + greatest Python code, but we have a clean Debian installation to the maximum possible extent, and the resulting container image is much smaller.
 
 ## Sample start script
 ```
