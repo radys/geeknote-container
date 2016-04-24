@@ -2,6 +2,8 @@ FROM debian:testing
 # This installs the vim "plasticbox" plugin for Markdown
 ADD getplastic.py /root/getplastic.py
 ADD vimrc /root/.vimrc
+# ca-certificates must be installed in order not to be cleaned out
+# by apt-get autoremove
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
 	git \
@@ -20,5 +22,6 @@ RUN apt-get update \
     && rm -f /root/getplastic.py \
     && rm -rf /opt/geeknote \
     && apt-get remove -y git python-pip \
-    && apt-get autoremove -y
+    && apt-get autoremove -y \
+    && apt-get clean
 ENTRYPOINT ["geeknote"]
