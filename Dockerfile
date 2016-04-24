@@ -1,5 +1,4 @@
 FROM debian:testing
-ENV LANG="en_EN.utf-8"
 # This installs the vim "plasticbox" plugin for Markdown
 ADD getplastic.py /root/getplastic.py
 ADD vimrc /root/.vimrc
